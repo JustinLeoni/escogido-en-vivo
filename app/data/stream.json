@@ -1,6 +1,6 @@
 {
- "ts": 1792366234042,
- "checked": "2026-10-18T23:30:34Z",
+ "ts": 1792367811413,
+ "checked": "2026-10-18T23:56:51Z",
  "game": {
   "gamePk": 851463,
   "status": "In Progress",
@@ -9,15 +9,8 @@
   "home": "Tigres del Licey",
   "startTime": "2026-10-18T21:00:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCodG7MOVMjh3lpV47EUTnMA",
-  "channelName": "Tigres del Licey",
-  "videoId": "uks5bbboNSI",
-  "isLive": true,
-  "title": "Leones del Escogido Vs Tigres del Licey",
-  "author": "Tigres Del Licey"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": null
 }
