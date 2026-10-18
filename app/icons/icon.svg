@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0A0A0A"/>
+  <rect x="48" y="48" width="416" height="416" rx="64" fill="#0E0E0E" stroke="rgba(255,255,255,.08)"/>
+  <path d="M80 408 L128 128 L232 128 L200 220 L300 220 L328 128 L432 128 L352 408 Z" fill="#E10600" opacity="0"/>
+  <g font-family="Arial Black, Archivo, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="256" y="288" font-size="180" fill="#E10600" letter-spacing="-8">LEO</text>
+  </g>
+  <text x="256" y="380" font-family="Arial, sans-serif" font-size="34" letter-spacing="10" fill="#FAFAFA" text-anchor="middle">★ LEONES ★</text>
+  <text x="256" y="428" font-family="Arial, sans-serif" font-size="22" letter-spacing="6" fill="#737373" text-anchor="middle">(LIDOM) 26·27</text>
+</svg>

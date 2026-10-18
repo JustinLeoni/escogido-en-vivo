@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escogido – En Vivo</title>
+<meta name="description" content="Juegos de los Leones del Escogido de la LIDOM: en vivo, horarios y puntuaciones.">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)">
+<script>
+(function(){
+  const saved = JSON.parse(localStorage.getItem('escogido.settings.v1') || '{}').theme || 'auto';
+  if (saved !== 'auto') document.documentElement.dataset.theme = saved;
+})();
+</script>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Escogido">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo"><span class="star">★</span> LEO <span class="dot">⬥</span> EN VIVO</div>
+  <div class="nav-actions">
+    <button id="btn-install" class="pill pill-ghost hidden">Instalar ↓</button>
+    <button id="btn-refresh" class="pill pill-black" title="Actualizar datos">⟳ Actualizar</button>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO: estado del juego -->
+  <section class="hero panel">
+    <div class="micro-label" id="hero-tag">◆ LEONES DEL ESCOGIDO ◆ LIDOM 26-27</div>
+    <div id="hero-state" class="hero-state">—</div>
+    <div id="scoreboard" class="scoreboard hidden">
+      <div class="team">
+        <div class="team-abbrev" id="away-abbrev">—</div>
+        <div class="big-number" id="away-score">0</div>
+      </div>
+      <div class="mid">
+        <div class="big-inning" id="inning">—</div>
+        <div class="micro-label" id="game-state-extra"></div>
+      </div>
+      <div class="team">
+        <div class="team-abbrev" id="home-abbrev">—</div>
+        <div class="big-number" id="home-score">0</div>
+      </div>
+    </div>
+    <div id="countdown" class="countdown hidden"></div>
+    <div class="hero-meta micro-label" id="hero-meta"></div>
+    <div id="line-row" class="line-row hidden">
+      <span>H <b id="h-info">—</b></span><span>E <b id="e-info">—</b></span>
+      <span id="bases-tag"></span>
+    </div>
+    <button id="btn-live" class="pill pill-red">Ver en vivo →</button>
+  </section>
+
+  <!-- REPRODUCTOR -->
+  <section id="player-section" class="panel hidden">
+    <div class="micro-label" id="player-tag">✳ TRANSMISIÓN · FUENTES OFICIALES GRATIS</div>
+    <div class="player-embed" id="player-embed"></div>
+    <div class="player-controls">
+      <button id="btn-fullscreen" class="pill pill-red">⛶ Pantalla completa</button>
+      <button id="btn-swap" class="pill pill-ghost">↻ Otra señal</button>
+    </div>
+    <div class="sources" id="player-links"></div>
+    <div class="micro-label hint">La app encuentra la señal oficial y gratuita del juego automáticamente: La Cueva Roja (Abriendo Sports), el club anfitrión y MLB en vivo, sin tocar nada.</div>
+  </section>
+
+  <!-- PRÓXIMOS -->
+  <section class="panel">
+    <div class="micro-label">01 ◆ PRÓXIMOS JUEGOS · HORA DOMINICANA</div>
+    <div class="list" id="list-upcoming"></div>
+  </section>
+
+  <!-- RESULTADOS RECENTES -->
+  <section class="panel">
+    <div class="micro-label">02 ◆ ÚLTIMOS RESULTADOS</div>
+    <div class="list" id="list-results"></div>
+  </section>
+
+  <!-- POSICIONES -->
+  <section class="panel">
+    <div class="micro-label">03 ◆ POSICIONES LIDOM 2026-27</div>
+    <table class="standings"><thead>
+      <tr><th class="l">Equipo</th><th>J</th><th>G</th><th>P</th><th>GB</th></tr>
+    </thead><tbody id="standings-body"><tr><td class="l" colspan="5">Cargando…</td></tr></tbody></table>
+  </section>
+
+  <!-- AJUSTES -->
+  <section class="panel" id="settings">
+    <div class="micro-label">04 ◆ TEMA</div>
+    <div class="sources" id="theme-srcs">
+      <button class="src-pill" data-theme-opt="auto">Auto (el teléfono)</button>
+      <button class="src-pill" data-theme-opt="light">Claro</button>
+      <button class="src-pill" data-theme-opt="dark">Oscuro</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="ghost-word">ESCOGIDO BICAMPEÓN</div>
+  <div class="micro-label footer-meta">ESTADIO QUISQUEYA JUAN MARICHAL (18.45°N, −69.92°W) · TEMP. 2026-27 · FUENTE: MLB STATSAPI / LIDOM.COM · © 2026 <span id="clock"></span></div>
+</footer>
+
+<span id="toast" class="toast"></span>
+<script src="app.js"></script>
+</body>
+</html>
