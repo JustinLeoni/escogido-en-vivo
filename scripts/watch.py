@@ -189,7 +189,14 @@ def laya_momento(game, feed):
     answers = laya_pick(state, {
         "momento": {
             "type": "score",
-            "instructions": "¿Qué tan dominante está el Leones del Escogido en este instante? 0 = el rival lo domina, 50 = parejo, 100 = el Escogido está aplastando.",
+            "instructions": "¿Qué tan dominante está el Leones del Escogido en este instante del juego? Escoge el nivel que mejor describa el estado actual.",
+            "criteria": [
+                "El rival está dominando completamente el juego",
+                "El rival está adelante pero el Escogido compite",
+                "El juego está parejo, sin ventaja clara",
+                "El Escogido está adelante y controla el ritmo",
+                "El Escogido está aplastando al rival",
+            ],
         },
         "proyeccion": {
             "type": "choice",
@@ -207,10 +214,11 @@ def laya_momento(game, feed):
     m = answers.get("momento") or {}
     val = m.get("score", m.get("value", m.get("choice")))
     if isinstance(val, (int, float)):
-        info["momento"] = round(val)
+        info["momento"] = round(val * 25 if 0 <= val <= 4 else val)   # 5 niveles → 0-100
     elif isinstance(val, str):
         try:
-            info["momento"] = int(float(val))
+            v = float(val)
+            info["momento"] = round(v * 25 if 0 <= v <= 4 else v)
         except Exception:
             pass
     p = answers.get("proyeccion") or {}
@@ -285,6 +293,7 @@ def self_test():
         },
         "momento": {
             "type": "score",
+            "instructions": "¿Qué tan fuertes va el Escogido en el ambiente del juego? Elige el nivel que mejor describa el año actual.",
             "criteria": [
                 "El rival está dominando completamente el juego",
                 "El rival está adelante pero el Escogido compite",
