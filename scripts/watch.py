@@ -274,5 +274,23 @@ def write(info):
     print("[out] " + json.dumps(summary, ensure_ascii=False)[:500])
 
 
+def self_test():
+    st = {"estado": "Scheduled", "marcador": "Leones del Escogido 0 — 0 Estrellas Orientales",
+          "detalle": "Juego CLASS DAY, marcador en ceros, inning 1 arriba, 0 outs. Liga dominicana LIDOM."}
+    qs = {
+        "zona_calle": {
+            "type": "choice",
+            "instructions": "En un juego del Escogido en PAUSA, ¿cuál estrategia se recomienda en la apertura?",
+            "criteria": {"proactiva": "Bateadores agresivos al inicio del juego", "conservadora": "Bateadores pacientes y disciplina en el plato"},
+        },
+        "momento": {"type": "score", "instructions": "¿Qué tan fuerte está el ambiente? 0-100"},
+    }
+    ans = laya_pick(st, qs)
+    print(f"[test] laya: {json.dumps(ans, ensure_ascii=False)[:400] if ans else None}")
+
+
 if __name__ == "__main__":
+    if os.environ.get("LAYA_TEST"):
+        self_test()
+        sys.exit(0)
     sys.exit(main())
