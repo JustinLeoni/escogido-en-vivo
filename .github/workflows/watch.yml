@@ -40,3 +40,7 @@ jobs:
             git commit -m "watch: señal/estado $(date -u +%H:%M)" --quiet
             git push --quiet
           fi
+      - name: Redeploy Pages con el stream.json nuevo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml -R JustinLeoni/escogido-en-vivo
