@@ -21,12 +21,13 @@ const CACHE_KEY = 'escogido.data.v1';
 const STD_KEY = 'escogido.std.v1';
 
 const els = {};
-['hero-tag','hero-state','scoreboard','away-abbrev','away-score','home-abbrev','home-score',
- 'inning','countdown','hero-meta','line-row','h-info','e-info','bases-tag','btn-live',
- 'player-section','player-embed','player-tag','player-links','btn-fullscreen','btn-swap',
- 'list-upcoming','list-results','standings-body',
- 'btn-install','btn-refresh','clock','toast'
-].forEach(id => els[id] = document.getElementById(id));
+ ['hero-tag','hero-state','scoreboard','away-abbrev','away-score','home-abbrev','home-score',
+  'inning','countdown','hero-meta','line-row','h-info','e-info','bases-tag','btn-live',
+  'scoreboard-legend','player-section','player-embed','player-tag','player-links','btn-fullscreen','btn-swap',
+  'list-upcoming','list-results','standings-body',
+  'laya-section','laya-box',
+  'btn-install','btn-refresh','clock','toast','splash'
+ ].forEach(id => els[id] = document.getElementById(id));
 
 let data = null;
 let liveGame = null;
@@ -86,6 +87,7 @@ function renderHero(){
       : 'FUERA DE<br><span class="live" style="font-size:.38em">TEMPORADA</span>';
     els.scoreboard.classList.add('hidden');
     els['line-row'].classList.add('hidden');
+    els['scoreboard-legend'].classList.add('hidden');
     els['btn-live'].classList.add('hidden');
     els.countdown.classList.remove('hidden');
     els.countdown.innerHTML = next
@@ -112,6 +114,7 @@ function renderGame(g){
     els['away-score'].textContent = away.score ?? 0;
     els['home-score'].textContent = home.score ?? 0;
     els['line-row'].classList.remove('hidden');
+    els['scoreboard-legend'].classList.remove('hidden');
     els['btn-live'].classList.remove('hidden');
     setLiveGame(g);
     return;
@@ -291,7 +294,7 @@ async function loadStream(){
     const res = await fetch('data/stream.json?v=' + Date.now(), { cache: 'no-store' });
     if (res.ok){
       streamData = await res.json();
-      if (streamData?.laya) renderLaya(streamData.laya);
+      renderLaya(streamData?.laya);
     }
   } catch { /* sin stream.json local: sigue con canales */ }
 }
@@ -395,16 +398,61 @@ els['btn-fullscreen'].onclick = () => {
   if (req) req.call(el);
 };
 
-/* gráficas Laya: momento y proyección del juego, precomputadas por el watcher */
+/* gráficas Laya: análisis del juego precomputado por el watcher, siempre visible */
+const PROY_LABELS = {
+  victoria: ['Favorito para ganar', 'El juego le conviene al Escogido'],
+  candela:  ['Candela · juego parejo', 'El marcador se puede decidir en el final'],
+  derrota:  ['Juego difícil', 'El rival llega mejor en este momento'],
+};
+function momentoWord(m){
+  if (m < 25) return 'El rival tiene el control';
+  if (m < 45) return 'El Escogido va por debajo';
+  if (m < 65) return 'Juego parejo, sin ventaja clara';
+  if (m < 88) return 'El Escogido va arriba';
+  return 'El Escogido está aplastando';
+}
+function probRow(label, val, win){
+  const pct = Math.round(Math.max(0, Math.min(1, Number(val) || 0)) * 100);
+  return `<div class="p-row ${win ? 'win' : ''}"><span>${label}</span><div class="p-bar"><i style="width:${pct}%"></i></div><b>${pct}%</b></div>`;
+}
 function renderLaya(laya){
-  const box = els['game-state-extra'];
+  const box = els['laya-box'];
   if (!box) return;
-  const m = typeof laya.momento === 'number' ? Math.max(0, Math.min(100, laya.momento)) : null;
-  const proj = laya.proyeccion?.choice;
-  const projTxt = { victoria: 'TIRA QUE GANA ⬥', candela: 'CANDLELA ⬥', derrota: 'TIRA QUE PIERDE ⬥' }[proj];
-  box.innerHTML =
-    (m !== null ? `<div class="momento"><b>MOMENTO</b><div class="bar"><i style="width:${m}%"></i></div><span>${m}</span></div>` : '') +
-    (projTxt ? `<div class="proj micro-label">${projTxt}</div>` : '');
+  if (!laya || (!laya.proyeccion && laya.momento == null)){
+    box.innerHTML = `<div class="estado-tag">SIN JUEGO QUE LEER</div>
+      <div style="margin-top:10px;color:var(--tx-2);font-size:13px">Laya activa su análisis cuando el Escogido tiene juego programado, en juego o finalizado. Se actualiza solo cada 15 minutos.</div>`;
+    return;
+  }
+  const modo = laya.modo || (laya.momento != null ? 'live' : 'pre');
+  const modoTag = modo === 'live' ? 'JUEGO EN CURSO · LECTURA EN VIVO' : 'PREVIA DEL JUEGO';
+  const m = typeof laya.momento === 'number' ? Math.max(0, Math.min(100, Math.round(laya.momento))) : null;
+  const proj = laya.proyeccion || {};
+  const probs = (typeof proj.probabilities === 'object' && proj.probabilities) || {};
+  const one = c => (PROY_LABELS[c] || [c, c])[0];
+
+  box.innerHTML = `
+    <div class="estado-tag">${modoTag}</div>
+    <div class="laya-grid">
+      <div class="laya-card">
+        <div class="micro-label">MOMENTO · ¿QUÉ TAN FUERTE VA EL ESCOGIDO?</div>
+        ${m !== null ? `
+          <div class="laya-big">${m}<span style="font-size:.4em;color:var(--tx-3)">/100</span></div>
+          <div class="laya-word">${momentoWord(m)}</div>
+          <div class="laya-bar"><i style="width:${m}%"></i></div>` :
+          `<div style="color:var(--tx-2);font-size:13px">El momento se mide en vivo, cuando el juego avanza. Ahora mismo el análisis es la proyección de la tarjeta de al lado.</div>`}
+      </div>
+      <div class="laya-card">
+        <div class="micro-label">PROYECCIÓN · ¿CÓMO PUEDE ACABAR?</div>
+        ${proj.choice ? `
+          <div class="laya-word" style="font-size:15px;font-weight:700;color:var(--tx);text-transform:none;letter-spacing:0">${one(proj.choice)}</div>
+          <div class="laya-prob">
+            ${probRow('GANA EL ESCOGIDO', probs.victoria ?? (proj.choice === 'victoria' ? 1 : 0), proj.choice === 'victoria')}
+            ${probRow('JUEGO DE CANDELA', probs.candela ?? (proj.choice === 'candela' ? 1 : 0), proj.choice === 'candela')}
+            ${probRow('GANA EL RIVAL', probs.derrota ?? (proj.choice === 'derrota' ? 1 : 0), proj.choice === 'derrota')}
+          </div>` :
+          `<div style="color:var(--tx-2);font-size:13px">En el próximo chequeo Laya completa la proyección del juego.</div>`}
+      </div>
+    </div>`;
 }
 
 /* acciones */
@@ -413,8 +461,7 @@ els['btn-refresh'].onclick = async () => {
   els['btn-refresh'].innerHTML = '⟳ …';
   try{
     data = await loadData(true);
-    renderHero(); renderLists(); await renderStandings(true); renderSources(); loadStream();
-    toast('Datos al día ✓');
+    renderHero(); renderLists(); await renderStandings(true); renderSources(); loadStream();    toast('Datos al día ✓');
   } catch { toast('Sin conexión · datos guardados'); }
   els['btn-refresh'].innerHTML = '⟳ Actualizar';
 };
@@ -425,26 +472,14 @@ window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); prompt
 els['btn-install'].onclick = async () => { if (!prompt2) return; prompt2.prompt(); await prompt2.userChoice; prompt2 = null; els['btn-install'].classList.add('hidden'); };
 if (window.matchMedia('(display-mode: standalone)').matches) els['btn-install'].classList.add('hidden');
 
-/* tema claro/oscuro según el teléfono */
-const getTheme = () => JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}').theme || 'auto';
+/* tema claro/oscuro AUTOMÁTICO según el teléfono (sin selector) */
 const mqLight = window.matchMedia('(prefers-color-scheme: light)');
-function applyTheme(theme){
-  const root = document.documentElement;
-  root.dataset.theme = (theme === 'auto') ? '' : theme;
-  const light = theme === 'light' || (theme === 'auto' && mqLight.matches);
-  const color = light ? '#FAFAFA' : '#0A0A0A';
+function applyTheme(){
+  const color = mqLight.matches ? '#FAFAFA' : '#0A0A0A';
   document.querySelectorAll('meta[name="theme-color"]').forEach(m => m.setAttribute('content', color));
-  document.querySelectorAll('[data-theme-opt]').forEach(b => b.classList.toggle('active', b.dataset.themeOpt === (theme || 'auto')));
 }
-document.querySelectorAll('[data-theme-opt]').forEach(b => {
-  b.onclick = () => {
-    const t = b.dataset.themeOpt;
-    localStorage.setItem(SETTINGS_KEY, JSON.stringify({ ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}'), theme: t }));
-    applyTheme(t); toast(t === 'auto' ? 'Tema automático según el teléfono' : t === 'light' ? 'Tema claro' : 'Tema oscuro');
-  };
-});
-mqLight.addEventListener('change', () => applyTheme(getTheme()));
-applyTheme(getTheme());
+mqLight.addEventListener('change', applyTheme);
+applyTheme();
 
 /* reloj */
 function tickClock(){ els.clock.textContent = `· ${new Date().toLocaleTimeString('es-DO', { timeZone: RD_TZ, hour:'2-digit', minute:'2-digit' })} RD`; }
@@ -452,28 +487,38 @@ setInterval(tickClock, 30000); tickClock();
 
 /* boot */
 async function boot(){
-  try { data = await loadData(); }
-  catch {
-    data = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-    if (!data){ els['hero-state'].textContent = 'SIN CONEXIÓN'; toast('Sin conexión 1ª vez: conecta redes'); return; }
-    toast('Offline · datos guardados');
-  }
-  els['hero-tag'].textContent = `◆ ${TEAM.name.toUpperCase()} ◆ LIDOM 26-27`;
-  await loadStream();            // decisiones del watcher: señal + gráficas
-  renderSources(); renderLists(); renderStandings();
-  renderHero(); renderPlayerIfNeeded();
+  const t0 = performance.now();
+  const hideSplash = () => {
+    const wait = Math.max(0, 260 - (performance.now() - t0));
+    setTimeout(() => {
+      const s = els.splash;
+      if (s){ s.classList.add('done'); setTimeout(() => s.remove(), 450); }
+    }, wait);
+  };
+  try {
+    try { data = await loadData(); }
+    catch {
+      data = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (!data){ els['hero-state'].textContent = 'SIN CONEXIÓN'; toast('Sin conexión 1ª vez: conecta redes'); return; }
+      toast('Offline · datos guardados');
+    }
+    els['hero-tag'].textContent = `◆ ${TEAM.name.toUpperCase()} ◆ LIDOM 26-27`;
+    await loadStream();            // decisiones del watcher: señal + gráficas
+    renderSources(); renderLists(); renderStandings();
+    renderHero(); renderPlayerIfNeeded();
 
-  /* vigilar cambio de estado del juego de hoy */
-  setInterval(async () => {
-    try{
-      const todayKey = new Date().toISOString().slice(0,10);
-      const d = await api(`schedule?sportId=17&startDate=${todayKey}&endDate=${todayKey}`);
-      data.today = d;
-      localStorage.setItem(CACHE_KEY, JSON.stringify({ day: todayKey, sched: data.sched, today: d }));
-      const mine = flatten(d.dates).find(isMyGame);
-      if (mine && mine.status.detailedState !== 'In Progress' || !liveGame) renderHero();
-    } catch { /* ok */ }
-  }, 90000);
+    /* vigilar cambio de estado del juego de hoy */
+    setInterval(async () => {
+      try{
+        const todayKey = new Date().toISOString().slice(0,10);
+        const d = await api(`schedule?sportId=17&startDate=${todayKey}&endDate=${todayKey}`);
+        data.today = d;
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ day: todayKey, sched: data.sched, today: d }));
+        const mine = flatten(d.dates).find(isMyGame);
+        if (mine && mine.status.detailedState !== 'In Progress' || !liveGame) renderHero();
+      } catch { /* ok */ }
+    }, 90000);
+  } finally { hideSplash(); }
 }
 
 document.addEventListener('visibilitychange', () => {

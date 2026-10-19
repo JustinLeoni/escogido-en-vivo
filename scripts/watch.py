@@ -48,13 +48,42 @@ def get_json(url):
         return None
 
 
-def escogido_game_today():
-    day = time.strftime("%Y-%m-%d", time.gmtime())
-    d = get_json(f"{STATSAPI}schedule?sportId=17&teamId={ESCOGIDO_ID}&startDate={day}&endDate={day}")
-    dates = (d or {}).get("dates", [])
-    if dates and dates[0].get("games"):
-        return dates[0]["games"][0]
+def escogido_game_range(start, end):
+    """Primer juego del Escogido vs otro equipo LIDOM en el rango de fechas."""
+    data = get_json(
+        STATSAPI + f"schedule?sportId=17&teamId={ESCOGIDO_ID}&startDate={start}&endDate={end}"
+    )
+    for d in (data or {}).get("dates", []):
+        for g in d.get("games", []):
+            ids = {g["teams"]["away"]["team"]["id"], g["teams"]["home"]["team"]["id"]}
+            if ESCOGIDO_ID in ids and all(667 <= i <= 672 for i in ids):
+                return g
     return None
+
+
+def escogido_game_today():
+    return escogido_game_range(time.strftime("%Y-%m-%d"), time.strftime("%Y-%m-%d"))
+
+
+def last_result():
+    """Último juego finalizado del Escogido (últimos 21 días): texto legible."""
+    end = time.strftime("%Y-%m-%d")
+    start = time.strftime("%Y-%m-%d", time.localtime(time.time() - 21 * 86400))
+    data = get_json(STATSAPI + f"schedule?sportId=17&teamId={ESCOGIDO_ID}&startDate={start}&endDate={end}")
+    games = []
+    for d in (data or {}).get("dates", []):
+        for g in d.get("games", []):
+            ids = {g["teams"]["away"]["team"]["id"], g["teams"]["home"]["team"]["id"]}
+            if ESCOGIDO_ID in ids and g["status"].get("abstractGameState") == "Final":
+                games.append(g)
+    if not games:
+        return "aún no hay juegos jugados esta temporada"
+    g = sorted(games, key=lambda x: x.get("gameDate", ""))[-1]
+    t = g["teams"]
+    me = t["away"] if t["away"]["team"]["id"] == ESCOGIDO_ID else t["home"]
+    opp = t["home"] if t["away"]["team"]["id"] == ESCOGIDO_ID else t["away"]
+    res = "GANÓ" if me.get("isWinner") else "PERDIÓ"
+    return f"{res} {me.get('score', '–')}–{opp.get('score', '–')} vs {opp['team']['name']} el {g.get('gameDate', '')[:10]}"
 
 
 # ── YouTube ────────────────────────────────────────────────────────────────
@@ -233,12 +262,62 @@ def laya_momento(game, feed):
     return info or None
 
 
+def laya_previa(game=None):
+    """Análisis de Laya cuando NO hay juego en vivo: proyección del próximo juego."""
+    if game:
+        t = game["teams"]
+        me = t["away"] if t["away"]["team"]["id"] == ESCOGIDO_ID else t["home"]
+        opp = t["home"] if t["away"]["team"]["id"] == ESCOGIDO_ID else t["away"]
+        rival = opp["team"]["name"]
+        hora = (game.get("gameDate") or "")[:16].replace("T", " ") + " UTC"
+        donde = "en casa" if me != t["away"] else "de visitante"
+        contexto = f"Juego programado del Escogido {donde} contra {rival} a las {hora}."
+    else:
+        rival = "rival LIDOM por definir"
+        contexto = "No hay juego del Escogido hoy; el próximo juego está por venir."
+    state = {
+        "estado": "Pre-juego",
+        "marcador": "—",
+        "detalle": f"{contexto} Último resultado del Escogido: {last_result()}. Liga dominicana LIDOM 2026-27.",
+    }
+    answers = laya_pick(state, {
+        "proyeccion": {
+            "type": "choice",
+            "instructions": "¿Cómo ve la casa el próximo juego del Leones del Escogido con lo que ha mostrado hasta ahora? Escoge la opción con probabilidad más alta.",
+            "criteria": {
+                "victoria": "El Escogido llega mejor y es favorito para ganar",
+                "candela": "El juego se ve parejo y apretado",
+                "derrota": "El rival llega mejor y el Escogido_arranca en desventaja",
+            },
+        },
+    })
+    if not answers:
+        return None
+    p = answers.get("proyeccion") or {}
+    ch = p.get("choice")
+    if not ch:
+        return None
+    info = {"modo": "pre", "proyeccion": {"choice": ch}}
+    probs = p.get("probabilities")
+    if probs:
+        info["proyeccion"]["probabilities"] = probs
+    print(f"[laya] previa: {json.dumps(info, ensure_ascii=False)[:300]}")
+    return info
+
+
 def main():
     game = escogido_game_today()
     info = {"ts": int(time.time() * 1000), "checked": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
 
     if not game:
-        info.update({"game": None, "live": False, "source": None, "alternates": [], "laya": None})
+        info["game"] = None
+        info["live"] = False
+        info["source"] = None
+        info["alternates"] = []
+        start = time.strftime("%Y-%m-%d")
+        end = time.strftime("%Y-%m-%d", time.localtime(time.time() + 10 * 86400))
+        nxt = escogido_game_range(start, end)
+        info["laya"] = laya_previa(nxt if nxt else None)
         write(info)
         return 0
 
@@ -267,7 +346,13 @@ def main():
 
     if abstract == "Live":
         feed = get_json("https://statsapi.mlb.com/api/v1.1/game/" + str(game["gamePk"]) + "/feed/live")
-        info["laya"] = laya_momento(game, feed)
+        laya = laya_momento(game, feed)
+        if laya:
+            laya["modo"] = "live"
+        info["laya"] = laya
+    else:
+        # juego Pre/Final/Cancelado hoy: Laya mantiene activa la proyección
+        info["laya"] = laya_previa(game if abstract != "Final" else None)
 
     write(info)
     return 0

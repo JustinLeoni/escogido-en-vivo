@@ -7,12 +7,6 @@
 <meta name="description" content="Juegos de los Leones del Escogido de la LIDOM: en vivo, horarios y puntuaciones.">
 <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)">
-<script>
-(function(){
-  const saved = JSON.parse(localStorage.getItem('escogido.settings.v1') || '{}').theme || 'auto';
-  if (saved !== 'auto') document.documentElement.dataset.theme = saved;
-})();
-</script>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -25,6 +19,14 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<div id="splash" aria-hidden="true">
+  <div class="splash-mark">
+    <span class="sk sk-logo"></span>
+    <span class="sk sk-line"></span>
+    <span class="sk sk-line short"></span>
+  </div>
+</div>
 
 <nav class="nav">
   <div class="nav-logo"><span class="star">★</span> LEO <span class="dot">⬥</span> EN VIVO</div>
@@ -56,10 +58,20 @@
     <div id="countdown" class="countdown hidden"></div>
     <div class="hero-meta micro-label" id="hero-meta"></div>
     <div id="line-row" class="line-row hidden">
-      <span>H <b id="h-info">—</b></span><span>E <b id="e-info">—</b></span>
+      <span>HITS <b id="h-info">—</b></span><span>ERRORES <b id="e-info">—</b></span>
       <span id="bases-tag"></span>
     </div>
+    <div id="scoreboard-legend" class="micro-label hint hidden">HITS = bateos que conectaron los equipos · ERRORES = equivocaciones a la defensa · AL BATE = jugador bateando en este momento</div>
     <button id="btn-live" class="pill pill-red">Ver en vivo →</button>
+  </section>
+
+  <!-- ANÁLISIS LAYA -->
+  <section id="laya-section" class="panel">
+    <div class="micro-label">◆ ANÁLISIS DEL JUEGO · LAYA</div>
+    <div id="laya-box">
+      <div class="laya-load"><div class="spinner"></div><span>Laya está leyendo el juego…</span></div>
+    </div>
+    <div class="micro-label hint">Laya es el cerebro de la app: lee el marcador oficial cada 15 minutos y estima qué tan fuerte va el Escogido (MOMENTO, de 0 a 100) y cómo puede acabar el juego (PROYECCIÓN). No es una predicción segura: es una lectura del juego en tiempo real.</div>
   </section>
 
   <!-- REPRODUCTOR -->
@@ -84,24 +96,16 @@
   <section class="panel">
     <div class="micro-label">02 ◆ ÚLTIMOS RESULTADOS</div>
     <div class="list" id="list-results"></div>
+    <div class="micro-label hint">Marcador final de los últimos juegos del Escogido. El primer número siempre es del Escogido.</div>
   </section>
 
   <!-- POSICIONES -->
   <section class="panel">
     <div class="micro-label">03 ◆ POSICIONES LIDOM 2026-27</div>
     <table class="standings"><thead>
-      <tr><th class="l">Equipo</th><th>J</th><th>G</th><th>P</th><th>GB</th></tr>
+      <tr><th class="l">Equipo</th><th>JJ</th><th>G</th><th>P</th><th>GB</th></tr>
     </thead><tbody id="standings-body"><tr><td class="l" colspan="5">Cargando…</td></tr></tbody></table>
-  </section>
-
-  <!-- AJUSTES -->
-  <section class="panel" id="settings">
-    <div class="micro-label">04 ◆ TEMA</div>
-    <div class="sources" id="theme-srcs">
-      <button class="src-pill" data-theme-opt="auto">Auto (el teléfono)</button>
-      <button class="src-pill" data-theme-opt="light">Claro</button>
-      <button class="src-pill" data-theme-opt="dark">Oscuro</button>
-    </div>
+    <div class="micro-label hint">JJ = juegos jugados · G = ganados · P = perdidos · GB = cuántos juegos de atraso hay con el primer lugar (el líder pasa directo al round robin de enero).</div>
   </section>
 </main>
 
