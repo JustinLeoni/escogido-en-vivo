@@ -1,14 +1,7 @@
 {
- "ts": 1792367811413,
- "checked": "2026-10-18T23:56:51Z",
- "game": {
-  "gamePk": 851463,
-  "status": "In Progress",
-  "abstract": "Live",
-  "away": "Leones del Escogido",
-  "home": "Tigres del Licey",
-  "startTime": "2026-10-18T21:00:00Z"
- },
+ "ts": 1792382955616,
+ "checked": "2026-10-19T04:09:15Z",
+ "game": null,
  "live": false,
  "source": null,
  "alternates": [],
