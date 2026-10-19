@@ -276,17 +276,32 @@ def write(info):
 
 def self_test():
     st = {"estado": "Scheduled", "marcador": "Leones del Escogido 0 — 0 Estrellas Orientales",
-          "detalle": "Juego CLASS DAY, marcador en ceros, inning 1 arriba, 0 outs. Liga dominicana LIDOM."}
+          "detalle": "Juego programado, marcador en ceros, inning 1 arriba, 0 outs. Liga dominicana LIDOM."}
     qs = {
-        "zona_calle": {
+        "estrategia": {
             "type": "choice",
-            "instructions": "En un juego del Escogido en PAUSA, ¿cuál estrategia se recomienda en la apertura?",
+            "instructions": "En un juego del Escogido a punto de empezar, ¿qué enfoque de apertura recomienda la casa?",
             "criteria": {"proactiva": "Bateadores agresivos al inicio del juego", "conservadora": "Bateadores pacientes y disciplina en el plato"},
         },
-        "momento": {"type": "score", "instructions": "¿Qué tan fuerte está el ambiente? 0-100"},
+        "momento": {
+            "type": "score",
+            "criteria": [
+                "El rival está dominando completamente el juego",
+                "El rival está adelante pero el Escogido compite",
+                "El juego está parejo, sin ventaja clara",
+                "El Escogido está adelante y controla el ritmo",
+                "El Escogido está aplastando al rival",
+            ],
+        },
     }
-    ans = laya_pick(st, qs)
-    print(f"[test] laya: {json.dumps(ans, ensure_ascii=False)[:400] if ans else None}")
+    global _laya_router
+    try:
+        from laya import Router
+        _laya_router = Router()
+        res = _laya_router.predict(st, qs)
+        print(f"[test] RAW: {json.dumps(res, ensure_ascii=False)[:900]}")
+    except Exception as e:
+        print(f"[test] FAIL: {e}")
 
 
 if __name__ == "__main__":
