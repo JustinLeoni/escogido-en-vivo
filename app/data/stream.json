@@ -1,9 +1,19 @@
 {
- "ts": 1792406487273,
- "checked": "2026-10-19T10:41:27Z",
+ "ts": 1792407464461,
+ "checked": "2026-10-19T10:57:44Z",
  "game": null,
  "live": false,
  "source": null,
  "alternates": [],
- "laya": null
+ "laya": {
+  "modo": "pre",
+  "proyeccion": {
+   "choice": "derrota",
+   "probabilities": {
+    "victoria": 0.0375,
+    "candela": 0.2092,
+    "derrota": 0.7532
+   }
+  }
+ }
 }
