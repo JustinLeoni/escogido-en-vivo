@@ -1,5 +1,5 @@
 /* Service Worker — Escogido PWA v1 */
-const VERSION = 'escogido-v7';
+const VERSION = 'escogido-v8';
 const SHELL = ['./', './index.html', './styles.css', './app.js', './manifest.json'];
 
 self.addEventListener('install', e => {

@@ -65,6 +65,27 @@ def escogido_game_today():
     return escogido_game_range(time.strftime("%Y-%m-%d"), time.strftime("%Y-%m-%d"))
 
 
+def standings_official():
+    """Tabla oficial de LIDOM desde la API pública de MLB (leagueId 131)."""
+    season = time.strftime("%Y")
+    data = get_json(f"{STATSAPI}standings?leagueId=131&sportId=17&season={season}")
+    rows = []
+    for rec in (data or {}).get("records", []):
+        for t in rec.get("teamRecords", []):
+            tid = t["team"]["id"]
+            rows.append({
+                "id": tid,
+                "nombre": t["team"].get("name", ""),
+                "jj": (t.get("wins") or 0) + (t.get("losses") or 0),
+                "g": t.get("wins"),
+                "p": t.get("losses"),
+                "gb": str(t.get("gamesBack", "–")).strip(),
+                "racha": (t.get("streak") or {}).get("streakCode", ""),
+                "me": tid == ESCOGIDO_ID,
+            })
+    return rows
+
+
 def last_result():
     """Último juego finalizado del Escogido (últimos 21 días): texto legible."""
     end = time.strftime("%Y-%m-%d")
@@ -318,6 +339,7 @@ def main():
         end = time.strftime("%Y-%m-%d", time.localtime(time.time() + 10 * 86400))
         nxt = escogido_game_range(start, end)
         info["laya"] = laya_previa(nxt if nxt else None)
+        info["posiciones"] = standings_official()
         write(info)
         return 0
 
@@ -353,6 +375,8 @@ def main():
     else:
         # juego Pre/Final/Cancelado hoy: Laya mantiene activa la proyección
         info["laya"] = laya_previa(game if abstract != "Final" else None)
+
+    info["posiciones"] = standings_official()
 
     write(info)
     return 0

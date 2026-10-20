@@ -18,7 +18,6 @@ const LIDOM_IDS = new Set(Object.keys(NAMES).map(Number));
 
 const SETTINGS_KEY = 'escogido.settings.v1';
 const CACHE_KEY = 'escogido.data.v1';
-const STD_KEY = 'escogido.std.v1';
 
 const els = {};
  ['hero-tag','hero-state','scoreboard','away-abbrev','away-score','home-abbrev','home-score',
@@ -227,12 +226,40 @@ function rowResult(g){
 
 const rowEmpty = t => `<div class="row"><div class="row-main" style="color:var(--tx-3)">${t}</div></div>`;
 
-/* posiciones */
-async function renderStandings(force){
-  const todayKey = new Date().toISOString().slice(0,10);
-  const cached = force ? null : JSON.parse(localStorage.getItem(STD_KEY) || 'null');
-  if (cached && cached.day === todayKey){ drawStandings(cached.table); return; }
+/* posiciones: siempre la tabla OFICIAL de la API de MLB (leagueId 131 LIDOM) */
+function drawStandings(table){
+  const body = els['standings-body'];
+  if (!table?.length){ body.innerHTML = `<tr><td class="l" colspan="5">Temporada 2026-27…</td></tr>`; return; }
+  body.innerHTML = table.map(t => `<tr class="${t.me || t.id === TEAM.id ? 'me' : ''}">
+      <td class="l">${t.nombre || t.name}</td>
+      <td>${t.jj ?? ''}</td><td>${t.g ?? ''}</td><td>${t.p ?? ''}</td>
+      <td>${t.gb ?? '—'}</td>
+    </tr>`).join('');
+}
+
+async function fetchOfficialStandings(){
+  const rows = [];
+  const data = await api(`standings?leagueId=131&sportId=17&season=${new Date().getUTCFullYear()}`);
+  for (const rec of (data.records || []))
+    for (const t of (rec.teamRecords || []))
+      rows.push({ id: t.team.id, nombre: t.team.name,
+                  jj: (t.wins || 0) + (t.losses || 0), g: t.wins, p: t.losses,
+                  gb: String(t.gamesBack ?? '—').trim(),
+                  racha: t.streak?.streakCode || '', me: t.team.id === TEAM.id });
+  return rows;
+}
+
+async function renderStandings(){
+  /* 1º: posiciones oficiales precomputadas por el watcher en stream.json */
+  if (streamData?.posiciones?.length){ drawStandings(streamData.posiciones); return; }
+  /* 2º: endpoint oficial directo desde el teléfono */
   try{
+    const rows = await fetchOfficialStandings();
+    if (rows.length){ drawStandings(rows); return; }
+  } catch { /* sin conexión: intento local */ }
+  /* 3º: cálculo local desde la agenda oficial (sin conexión al endpoint standings) */
+  try{
+    const todayKey = new Date().toISOString().slice(0,10);
     const ids = [...LIDOM_IDS];
     const all = await Promise.all(ids.map(id => api(`schedule?sportId=17&teamId=${id}&startDate=2026-10-16&endDate=${todayKey}`)));
     const finals = [...new Map(
@@ -248,21 +275,12 @@ async function renderStandings(force){
       if (a.isWinner){ t[a.team.id].w++; t[h.team.id].l++; }
       else { t[h.team.id].w++; t[a.team.id].l++; }
     }
-    const table = Object.entries(t).map(([id, v]) => ({ id: Number(id), name: nameOf({ id: Number(id) }), ...v })).sort((x,y) => y.w - x.w);
-    localStorage.setItem(STD_KEY, JSON.stringify({ day: todayKey, table }));
+    const f = (() => { let m = 0; for (const id of LIDOM_IDS) m = Math.max(m, t[id].w); return m; })();
+    const table = Object.entries(t).map(([id, v]) => ({ id: Number(id), nombre: nameOf({ id: Number(id) }),
+      jj: v.w + v.l, g: v.w, l: v.l, p: v.l, gb: v.w === f ? '—' : ((f - v.w) + v.l) / 2, me: Number(id) === TEAM.id }))
+      .sort((x,y) => (x.gb === '—' ? -1 : y.gb === '—' ? 1 : x.gb - y.gb));
     drawStandings(table);
   } catch { drawStandings([]); }
-}
-
-function drawStandings(table){
-  const body = els['standings-body'];
-  if (!table?.length){ body.innerHTML = `<tr><td class="l" colspan="5">Temporada 2026-27…</td></tr>`; return; }
-  const f = table[0];
-  body.innerHTML = table.map((t, i) => `<tr class="${t.id === TEAM.id ? 'me' : ''}">
-      <td class="l">${t.name}</td>
-      <td>${t.g}</td><td>${t.w}</td><td>${t.l}</td>
-      <td>${i === 0 ? '—' : ((f.w - t.w) + (t.l - f.l)) / 2}</td>
-    </tr>`).join('');
 }
 
 /* reproductor automático — fuentes oficiales verificadas (canal ID de YouTube) */
@@ -516,6 +534,7 @@ async function boot(){
         localStorage.setItem(CACHE_KEY, JSON.stringify({ day: todayKey, sched: data.sched, today: d }));
         const mine = flatten(d.dates).find(isMyGame);
         if (mine && mine.status.detailedState !== 'In Progress' || !liveGame) renderHero();
+        loadStream();   // posiciones + análisis Laya frescos cada 90 s
       } catch { /* ok */ }
     }, 90000);
   } finally { hideSplash(); }
