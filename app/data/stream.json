@@ -1,29 +1,20 @@
 {
- "ts": 1792626154340,
- "checked": "2026-10-21T23:42:34Z",
- "game": {
-  "gamePk": 851489,
-  "status": "In Progress",
-  "abstract": "Live",
-  "away": "Gigantes del Cibao",
-  "home": "Leones del Escogido",
-  "startTime": "2026-10-21T23:15:00Z"
- },
+ "ts": 1792634275554,
+ "checked": "2026-10-22T01:57:55Z",
+ "game": null,
  "live": false,
  "source": null,
  "alternates": [],
  "laya": {
-  "momento": 69,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.1552,
-    "candela": 0.0224,
-    "derrota": 0.8224
-   },
-   "confidence": 0.5129
-  },
-  "modo": "live"
+    "victoria": 0.1977,
+    "candela": 0.1365,
+    "derrota": 0.6658
+   }
+  }
  },
  "posiciones": [
   {
