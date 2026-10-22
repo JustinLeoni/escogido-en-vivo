@@ -1,6 +1,6 @@
 {
- "ts": 1792634275554,
- "checked": "2026-10-22T01:57:55Z",
+ "ts": 1792654112062,
+ "checked": "2026-10-22T07:28:32Z",
  "game": null,
  "live": false,
  "source": null,
@@ -10,9 +10,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.1977,
-    "candela": 0.1365,
-    "derrota": 0.6658
+    "victoria": 0.0303,
+    "candela": 0.1264,
+    "derrota": 0.8433
    }
   }
  },
@@ -20,36 +20,36 @@
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 4,
-   "g": 3,
+   "jj": 5,
+   "g": 4,
    "p": 1,
-   "gb": "-1.0",
-   "racha": "W2",
-   "me": false
-  },
-  {
-   "id": 668,
-   "nombre": "Toros",
-   "jj": 4,
-   "g": 3,
-   "p": 1,
-   "gb": "-1.0",
+   "gb": "-1.5",
    "racha": "W3",
-   "me": false
-  },
-  {
-   "id": 669,
-   "nombre": "Estrellas",
-   "jj": 4,
-   "g": 2,
-   "p": 2,
-   "gb": "-",
-   "racha": "L2",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
+   "jj": 5,
+   "g": 3,
+   "p": 2,
+   "gb": "-0.5",
+   "racha": "W1",
+   "me": false
+  },
+  {
+   "id": 668,
+   "nombre": "Toros",
+   "jj": 5,
+   "g": 3,
+   "p": 2,
+   "gb": "-0.5",
+   "racha": "L1",
+   "me": false
+  },
+  {
+   "id": 669,
+   "nombre": "Estrellas",
    "jj": 4,
    "g": 2,
    "p": 2,
@@ -70,11 +70,11 @@
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 4,
+   "jj": 5,
    "g": 1,
-   "p": 3,
-   "gb": "1.0",
-   "racha": "W1",
+   "p": 4,
+   "gb": "1.5",
+   "racha": "L1",
    "me": true
   }
  ]
