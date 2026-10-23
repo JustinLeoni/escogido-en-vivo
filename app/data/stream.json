@@ -1,6 +1,6 @@
 {
- "ts": 1792714375217,
- "checked": "2026-10-23T00:12:55Z",
+ "ts": 1792731624141,
+ "checked": "2026-10-23T05:00:24Z",
  "game": {
   "gamePk": 851488,
   "status": "Scheduled",
@@ -37,21 +37,11 @@
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 5,
-   "g": 3,
+   "jj": 6,
+   "g": 4,
    "p": 2,
-   "gb": "-0.5",
-   "racha": "W1",
-   "me": false
-  },
-  {
-   "id": 668,
-   "nombre": "Toros",
-   "jj": 5,
-   "g": 3,
-   "p": 2,
-   "gb": "-0.5",
-   "racha": "L1",
+   "gb": "-1.0",
+   "racha": "W2",
    "me": false
   },
   {
@@ -60,6 +50,16 @@
    "jj": 4,
    "g": 2,
    "p": 2,
+   "gb": "-",
+   "racha": "L2",
+   "me": false
+  },
+  {
+   "id": 668,
+   "nombre": "Toros",
+   "jj": 6,
+   "g": 3,
+   "p": 3,
    "gb": "-",
    "racha": "L2",
    "me": false
