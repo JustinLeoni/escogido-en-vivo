@@ -1,13 +1,13 @@
 {
- "ts": 1792792971014,
- "checked": "2026-10-23T22:02:51Z",
+ "ts": 1792802742657,
+ "checked": "2026-10-24T00:45:42Z",
  "game": {
-  "gamePk": 851488,
+  "gamePk": 851487,
   "status": "Scheduled",
   "abstract": "Preview",
-  "away": "Aguilas Cibaenas",
+  "away": "Toros del Este",
   "home": "Leones del Escogido",
-  "startTime": "2026-10-23T23:15:00Z"
+  "startTime": "2026-10-24T20:00:00Z"
  },
  "live": false,
  "source": null,
@@ -17,9 +17,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0303,
-    "candela": 0.1264,
-    "derrota": 0.8433
+    "victoria": 0.0327,
+    "candela": 0.1144,
+    "derrota": 0.853
    }
   }
  },
