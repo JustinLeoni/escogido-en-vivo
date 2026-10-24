@@ -1,6 +1,6 @@
 {
- "ts": 1792802742657,
- "checked": "2026-10-24T00:45:42Z",
+ "ts": 1792818515633,
+ "checked": "2026-10-24T05:08:35Z",
  "game": {
   "gamePk": 851487,
   "status": "Scheduled",
@@ -17,23 +17,13 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0327,
-    "candela": 0.1144,
-    "derrota": 0.853
+    "victoria": 0.2944,
+    "candela": 0.1034,
+    "derrota": 0.6022
    }
   }
  },
  "posiciones": [
-  {
-   "id": 672,
-   "nombre": "Tigres",
-   "jj": 5,
-   "g": 4,
-   "p": 1,
-   "gb": "-1.5",
-   "racha": "W3",
-   "me": false
-  },
   {
    "id": 670,
    "nombre": "Gigantes",
@@ -45,13 +35,23 @@
    "me": false
   },
   {
+   "id": 672,
+   "nombre": "Tigres",
+   "jj": 6,
+   "g": 4,
+   "p": 2,
+   "gb": "-1.0",
+   "racha": "L1",
+   "me": false
+  },
+  {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 4,
-   "g": 2,
+   "jj": 5,
+   "g": 3,
    "p": 2,
-   "gb": "-",
-   "racha": "L2",
+   "gb": "-0.5",
+   "racha": "W1",
    "me": false
   },
   {
@@ -65,24 +65,24 @@
    "me": false
   },
   {
-   "id": 667,
-   "nombre": "Aguilas",
-   "jj": 4,
-   "g": 1,
-   "p": 3,
-   "gb": "1.0",
-   "racha": "L1",
-   "me": false
-  },
-  {
    "id": 671,
    "nombre": "Leones",
+   "jj": 6,
+   "g": 2,
+   "p": 4,
+   "gb": "1.0",
+   "racha": "W1",
+   "me": true
+  },
+  {
+   "id": 667,
+   "nombre": "Aguilas",
    "jj": 5,
    "g": 1,
    "p": 4,
    "gb": "1.5",
-   "racha": "L1",
-   "me": true
+   "racha": "L2",
+   "me": false
   }
  ]
 }
