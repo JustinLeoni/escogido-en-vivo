@@ -1,10 +1,10 @@
 {
- "ts": 1792870330019,
- "checked": "2026-10-24T19:32:10Z",
+ "ts": 1792879063534,
+ "checked": "2026-10-24T21:57:43Z",
  "game": {
   "gamePk": 851487,
-  "status": "Pre-Game",
-  "abstract": "Preview",
+  "status": "Manager challenge",
+  "abstract": "Live",
   "away": "Toros del Este",
   "home": "Leones del Escogido",
   "startTime": "2026-10-24T20:00:00Z"
@@ -13,15 +13,17 @@
  "source": null,
  "alternates": [],
  "laya": {
-  "modo": "pre",
+  "momento": 65,
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.2944,
-    "candela": 0.1034,
-    "derrota": 0.6022
-   }
-  }
+    "victoria": 0.2822,
+    "candela": 0.0414,
+    "derrota": 0.6763
+   },
+   "confidence": 0.3142
+  },
+  "modo": "live"
  },
  "posiciones": [
   {
