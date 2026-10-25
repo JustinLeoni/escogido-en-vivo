@@ -1,29 +1,27 @@
 {
- "ts": 1792879063534,
- "checked": "2026-10-24T21:57:43Z",
+ "ts": 1792887194875,
+ "checked": "2026-10-25T00:13:14Z",
  "game": {
-  "gamePk": 851487,
-  "status": "Manager challenge",
-  "abstract": "Live",
-  "away": "Toros del Este",
-  "home": "Leones del Escogido",
-  "startTime": "2026-10-24T20:00:00Z"
+  "gamePk": 851438,
+  "status": "Scheduled",
+  "abstract": "Preview",
+  "away": "Leones del Escogido",
+  "home": "Toros del Este",
+  "startTime": "2026-10-25T21:00:00Z"
  },
  "live": false,
  "source": null,
  "alternates": [],
  "laya": {
-  "momento": 65,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.2822,
-    "candela": 0.0414,
-    "derrota": 0.6763
-   },
-   "confidence": 0.3142
-  },
-  "modo": "live"
+    "victoria": 0.2328,
+    "candela": 0.036,
+    "derrota": 0.7312
+   }
+  }
  },
  "posiciones": [
   {
@@ -32,7 +30,7 @@
    "jj": 6,
    "g": 4,
    "p": 2,
-   "gb": "-1.0",
+   "gb": "-1.5",
    "racha": "W2",
    "me": false
   },
@@ -42,7 +40,7 @@
    "jj": 6,
    "g": 4,
    "p": 2,
-   "gb": "-1.0",
+   "gb": "-1.5",
    "racha": "L1",
    "me": false
   },
@@ -52,29 +50,29 @@
    "jj": 5,
    "g": 3,
    "p": 2,
-   "gb": "-0.5",
+   "gb": "-1.0",
    "racha": "W1",
-   "me": false
-  },
-  {
-   "id": 668,
-   "nombre": "Toros",
-   "jj": 6,
-   "g": 3,
-   "p": 3,
-   "gb": "-",
-   "racha": "L2",
    "me": false
   },
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 6,
-   "g": 2,
+   "jj": 7,
+   "g": 3,
    "p": 4,
-   "gb": "1.0",
-   "racha": "W1",
+   "gb": "-",
+   "racha": "W2",
    "me": true
+  },
+  {
+   "id": 668,
+   "nombre": "Toros",
+   "jj": 7,
+   "g": 3,
+   "p": 4,
+   "gb": "-",
+   "racha": "L3",
+   "me": false
   },
   {
    "id": 667,
@@ -82,7 +80,7 @@
    "jj": 5,
    "g": 1,
    "p": 4,
-   "gb": "1.5",
+   "gb": "1.0",
    "racha": "L2",
    "me": false
   }
