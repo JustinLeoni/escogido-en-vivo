@@ -1,13 +1,13 @@
 {
- "ts": 1793218829013,
- "checked": "2026-10-28T20:20:29Z",
+ "ts": 1793233053328,
+ "checked": "2026-10-29T00:17:33Z",
  "game": {
-  "gamePk": 851556,
+  "gamePk": 851519,
   "status": "Scheduled",
   "abstract": "Preview",
   "away": "Leones del Escogido",
-  "home": "Aguilas Cibaenas",
-  "startTime": "2026-10-28T23:30:00Z"
+  "home": "Gigantes del Cibao",
+  "startTime": "2026-10-29T23:00:00Z"
  },
  "live": false,
  "source": null,
@@ -17,9 +17,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0033,
-    "candela": 0.0069,
-    "derrota": 0.9898
+    "victoria": 0.0043,
+    "candela": 0.0016,
+    "derrota": 0.9941
    }
   }
  },
