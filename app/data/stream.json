@@ -1,6 +1,6 @@
 {
- "ts": 1793407866071,
- "checked": "2026-10-31T00:51:06Z",
+ "ts": 1793429505448,
+ "checked": "2026-10-31T06:51:45Z",
  "game": {
   "gamePk": 851565,
   "status": "Scheduled",
@@ -9,24 +9,17 @@
   "home": "Aguilas Cibaenas",
   "startTime": "2026-10-31T22:00:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "AVhbOvwCpPU",
-  "isLive": true,
-  "title": "ESTRELLAS ORIENTALES VS LEONES DEL ESCOGIDO - 30 OCTUBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
   "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.2099,
-    "candela": 0.0498,
-    "derrota": 0.7402
+    "victoria": 0.1048,
+    "candela": 0.0812,
+    "derrota": 0.814
    }
   }
  },
@@ -34,61 +27,61 @@
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 10,
+   "jj": 11,
    "g": 7,
-   "p": 3,
-   "gb": "-3.0",
-   "racha": "W2",
+   "p": 4,
+   "gb": "-2.0",
+   "racha": "L1",
    "me": false
   },
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 10,
-   "g": 6,
+   "jj": 11,
+   "g": 7,
    "p": 4,
    "gb": "-2.0",
-   "racha": "W5",
+   "racha": "W6",
    "me": true
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 9,
+   "jj": 10,
    "g": 5,
-   "p": 4,
-   "gb": "-1.5",
-   "racha": "L2",
+   "p": 5,
+   "gb": "-0.5",
+   "racha": "L3",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 10,
-   "g": 4,
+   "jj": 11,
+   "g": 5,
    "p": 6,
    "gb": "-",
-   "racha": "L4",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 10,
-   "g": 4,
+   "jj": 11,
+   "g": 5,
    "p": 6,
    "gb": "-",
-   "racha": "L1",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 9,
+   "jj": 10,
    "g": 3,
-   "p": 6,
-   "gb": "0.5",
-   "racha": "W1",
+   "p": 7,
+   "gb": "1.5",
+   "racha": "L1",
    "me": false
   }
  ]
