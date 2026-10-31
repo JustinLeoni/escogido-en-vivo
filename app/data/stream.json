@@ -1,6 +1,6 @@
 {
- "ts": 1793469353874,
- "checked": "2026-10-31T17:55:53Z",
+ "ts": 1793481448781,
+ "checked": "2026-10-31T21:17:28Z",
  "game": {
   "gamePk": 851565,
   "status": "Scheduled",
@@ -9,15 +9,8 @@
   "home": "Aguilas Cibaenas",
   "startTime": "2026-10-31T22:00:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "DG3e5J7cD_w",
-  "isLive": true,
-  "title": "Jassel Pérez en la ACB: Jornada #6: Casademont Zaragoza - FIATC Girona - Liga Endesa 2027",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
   "modo": "pre",
