@@ -1,25 +1,32 @@
 {
- "ts": 1793394488344,
- "checked": "2026-10-30T21:08:08Z",
+ "ts": 1793407866071,
+ "checked": "2026-10-31T00:51:06Z",
  "game": {
-  "gamePk": 851486,
+  "gamePk": 851565,
   "status": "Scheduled",
   "abstract": "Preview",
-  "away": "Estrellas Orientales",
-  "home": "Leones del Escogido",
-  "startTime": "2026-10-30T23:15:00Z"
+  "away": "Leones del Escogido",
+  "home": "Aguilas Cibaenas",
+  "startTime": "2026-10-31T22:00:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "AVhbOvwCpPU",
+  "isLive": true,
+  "title": "ESTRELLAS ORIENTALES VS LEONES DEL ESCOGIDO - 30 OCTUBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
   "modo": "pre",
   "proyeccion": {
-   "choice": "victoria",
+   "choice": "derrota",
    "probabilities": {
-    "victoria": 0.4731,
-    "candela": 0.1409,
-    "derrota": 0.386
+    "victoria": 0.2099,
+    "candela": 0.0498,
+    "derrota": 0.7402
    }
   }
  },
