@@ -1,27 +1,36 @@
 {
- "ts": 1793558994660,
- "checked": "2026-11-01T18:49:54Z",
+ "ts": 1793572869092,
+ "checked": "2026-11-01T22:41:09Z",
  "game": {
   "gamePk": 851477,
-  "status": "Scheduled",
-  "abstract": "Preview",
+  "status": "In Progress",
+  "abstract": "Live",
   "away": "Aguilas Cibaenas",
   "home": "Leones del Escogido",
   "startTime": "2026-11-01T21:00:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "HLM8cn9F5uI",
+  "isLive": true,
+  "title": "AGUILAS CIBAEÑAS VS LEONES DEL ESCOGIDO - 1 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
-  "modo": "pre",
+  "momento": 66,
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.4365,
-    "candela": 0.0169,
-    "derrota": 0.5466
-   }
-  }
+    "victoria": 0.1215,
+    "candela": 0.0204,
+    "derrota": 0.8581
+   },
+   "confidence": 0.5751
+  },
+  "modo": "live"
  },
  "posiciones": [
   {
