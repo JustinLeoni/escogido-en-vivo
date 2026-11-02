@@ -1,96 +1,80 @@
 {
- "ts": 1793572869092,
- "checked": "2026-11-01T22:41:09Z",
- "game": {
-  "gamePk": 851477,
-  "status": "In Progress",
-  "abstract": "Live",
-  "away": "Aguilas Cibaenas",
-  "home": "Leones del Escogido",
-  "startTime": "2026-11-01T21:00:00Z"
- },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "HLM8cn9F5uI",
-  "isLive": true,
-  "title": "AGUILAS CIBAEÑAS VS LEONES DEL ESCOGIDO - 1 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
-  "author": "Abriendo Sports"
- },
+ "ts": 1793584406598,
+ "checked": "2026-11-02T01:53:26Z",
+ "game": null,
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
-  "momento": 66,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.1215,
-    "candela": 0.0204,
-    "derrota": 0.8581
-   },
-   "confidence": 0.5751
-  },
-  "modo": "live"
+    "victoria": 0.2686,
+    "candela": 0.1092,
+    "derrota": 0.6222
+   }
+  }
  },
  "posiciones": [
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 12,
-   "g": 8,
+   "jj": 13,
+   "g": 9,
    "p": 4,
-   "gb": "-2.5",
-   "racha": "W1",
+   "gb": "-3.5",
+   "racha": "W2",
    "me": false
   },
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 12,
-   "g": 8,
+   "jj": 13,
+   "g": 9,
    "p": 4,
-   "gb": "-2.5",
-   "racha": "W7",
+   "gb": "-3.5",
+   "racha": "W8",
    "me": true
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 12,
-   "g": 6,
+   "jj": 13,
+   "g": 7,
    "p": 6,
-   "gb": "-0.5",
-   "racha": "W2",
+   "gb": "-1.5",
+   "racha": "W3",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 11,
+   "jj": 12,
    "g": 5,
-   "p": 6,
+   "p": 7,
    "gb": "-",
-   "racha": "L4",
+   "racha": "L5",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 12,
+   "jj": 13,
    "g": 5,
-   "p": 7,
+   "p": 8,
    "gb": "0.5",
-   "racha": "L1",
+   "racha": "L2",
    "me": false
   },
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 11,
+   "jj": 12,
    "g": 3,
-   "p": 8,
+   "p": 9,
    "gb": "2.0",
-   "racha": "L2",
+   "racha": "L3",
    "me": false
   }
  ]
