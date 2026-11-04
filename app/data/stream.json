@@ -1,25 +1,32 @@
 {
- "ts": 1793744684828,
- "checked": "2026-11-03T22:24:44Z",
+ "ts": 1793759924111,
+ "checked": "2026-11-04T02:38:44Z",
  "game": {
-  "gamePk": 851478,
+  "gamePk": 851476,
   "status": "Scheduled",
   "abstract": "Preview",
-  "away": "Toros del Este",
+  "away": "Gigantes del Cibao",
   "home": "Leones del Escogido",
-  "startTime": "2026-11-03T23:15:00Z"
+  "startTime": "2026-11-04T23:15:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "5s6EEY-VRkg",
+  "isLive": true,
+  "title": "TOROS DEL ESTE VS LEONES DEL ESCOGIDO - 3 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
   "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.2686,
-    "candela": 0.1092,
-    "derrota": 0.6222
+    "victoria": 0.2988,
+    "candela": 0.2104,
+    "derrota": 0.4908
    }
   }
  },
