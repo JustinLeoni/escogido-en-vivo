@@ -1,27 +1,36 @@
 {
- "ts": 1793814894362,
- "checked": "2026-11-04T17:54:54Z",
+ "ts": 1793834984310,
+ "checked": "2026-11-04T23:29:44Z",
  "game": {
   "gamePk": 851476,
-  "status": "Scheduled",
-  "abstract": "Preview",
+  "status": "In Progress",
+  "abstract": "Live",
   "away": "Gigantes del Cibao",
   "home": "Leones del Escogido",
   "startTime": "2026-11-04T23:15:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "hqxaww3OJJY",
+  "isLive": true,
+  "title": "GIGANTES DEL CIBAO VS LEONES DEL ESCOGIDO - 4 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
-  "modo": "pre",
+  "momento": 59,
   "proyeccion": {
-   "choice": "candela",
+   "choice": "victoria",
    "probabilities": {
-    "victoria": 0.2489,
-    "candela": 0.3834,
-    "derrota": 0.3677
-   }
-  }
+    "victoria": 0.4893,
+    "candela": 0.0342,
+    "derrota": 0.4765
+   },
+   "confidence": 0.2551
+  },
+  "modo": "live"
  },
  "posiciones": [
   {
