@@ -1,6 +1,6 @@
 {
- "ts": 1793759924111,
- "checked": "2026-11-04T02:38:44Z",
+ "ts": 1793814894362,
+ "checked": "2026-11-04T17:54:54Z",
  "game": {
   "gamePk": 851476,
   "status": "Scheduled",
@@ -9,86 +9,79 @@
   "home": "Leones del Escogido",
   "startTime": "2026-11-04T23:15:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "5s6EEY-VRkg",
-  "isLive": true,
-  "title": "TOROS DEL ESTE VS LEONES DEL ESCOGIDO - 3 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
   "modo": "pre",
   "proyeccion": {
-   "choice": "derrota",
+   "choice": "candela",
    "probabilities": {
-    "victoria": 0.2988,
-    "candela": 0.2104,
-    "derrota": 0.4908
+    "victoria": 0.2489,
+    "candela": 0.3834,
+    "derrota": 0.3677
    }
   }
  },
  "posiciones": [
   {
-   "id": 672,
-   "nombre": "Tigres",
-   "jj": 13,
-   "g": 9,
-   "p": 4,
-   "gb": "-3.5",
-   "racha": "W2",
-   "me": false
-  },
-  {
    "id": 671,
    "nombre": "Leones",
-   "jj": 13,
-   "g": 9,
+   "jj": 14,
+   "g": 10,
    "p": 4,
    "gb": "-3.5",
-   "racha": "W8",
+   "racha": "W9",
    "me": true
+  },
+  {
+   "id": 672,
+   "nombre": "Tigres",
+   "jj": 14,
+   "g": 9,
+   "p": 5,
+   "gb": "-2.5",
+   "racha": "L1",
+   "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 13,
+   "jj": 14,
    "g": 7,
-   "p": 6,
-   "gb": "-1.5",
-   "racha": "W3",
+   "p": 7,
+   "gb": "-0.5",
+   "racha": "L1",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 12,
-   "g": 5,
+   "jj": 13,
+   "g": 6,
    "p": 7,
    "gb": "-",
-   "racha": "L5",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 13,
+   "jj": 14,
    "g": 5,
-   "p": 8,
-   "gb": "0.5",
-   "racha": "L2",
+   "p": 9,
+   "gb": "1.5",
+   "racha": "L3",
    "me": false
   },
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 12,
-   "g": 3,
+   "jj": 13,
+   "g": 4,
    "p": 9,
    "gb": "2.0",
-   "racha": "L3",
+   "racha": "W1",
    "me": false
   }
  ]
