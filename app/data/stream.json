@@ -1,6 +1,6 @@
 {
- "ts": 1793850159970,
- "checked": "2026-11-05T03:42:39Z",
+ "ts": 1793878635915,
+ "checked": "2026-11-05T11:37:15Z",
  "game": null,
  "live": false,
  "source": null,
@@ -38,6 +38,16 @@
    "me": false
   },
   {
+   "id": 669,
+   "nombre": "Estrellas",
+   "jj": 14,
+   "g": 7,
+   "p": 7,
+   "gb": "-0.5",
+   "racha": "W2",
+   "me": false
+  },
+  {
    "id": 670,
    "nombre": "Gigantes",
    "jj": 15,
@@ -45,16 +55,6 @@
    "p": 8,
    "gb": "-",
    "racha": "L2",
-   "me": false
-  },
-  {
-   "id": 669,
-   "nombre": "Estrellas",
-   "jj": 13,
-   "g": 6,
-   "p": 7,
-   "gb": "-",
-   "racha": "W1",
    "me": false
   },
   {
@@ -70,11 +70,11 @@
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 13,
+   "jj": 14,
    "g": 4,
-   "p": 9,
-   "gb": "2.0",
-   "racha": "W1",
+   "p": 10,
+   "gb": "2.5",
+   "racha": "L1",
    "me": false
   }
  ]
