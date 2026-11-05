@@ -1,66 +1,50 @@
 {
- "ts": 1793834984310,
- "checked": "2026-11-04T23:29:44Z",
- "game": {
-  "gamePk": 851476,
-  "status": "In Progress",
-  "abstract": "Live",
-  "away": "Gigantes del Cibao",
-  "home": "Leones del Escogido",
-  "startTime": "2026-11-04T23:15:00Z"
- },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "hqxaww3OJJY",
-  "isLive": true,
-  "title": "GIGANTES DEL CIBAO VS LEONES DEL ESCOGIDO - 4 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
-  "author": "Abriendo Sports"
- },
+ "ts": 1793850159970,
+ "checked": "2026-11-05T03:42:39Z",
+ "game": null,
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
-  "momento": 59,
+  "modo": "pre",
   "proyeccion": {
-   "choice": "victoria",
+   "choice": "derrota",
    "probabilities": {
-    "victoria": 0.4893,
-    "candela": 0.0342,
-    "derrota": 0.4765
-   },
-   "confidence": 0.2551
-  },
-  "modo": "live"
+    "victoria": 0.2285,
+    "candela": 0.0142,
+    "derrota": 0.7573
+   }
+  }
  },
  "posiciones": [
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 14,
-   "g": 10,
+   "jj": 15,
+   "g": 11,
    "p": 4,
-   "gb": "-3.5",
-   "racha": "W9",
+   "gb": "-4.0",
+   "racha": "W10",
    "me": true
   },
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 14,
-   "g": 9,
+   "jj": 15,
+   "g": 10,
    "p": 5,
-   "gb": "-2.5",
-   "racha": "L1",
+   "gb": "-3.0",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 14,
+   "jj": 15,
    "g": 7,
-   "p": 7,
-   "gb": "-0.5",
-   "racha": "L1",
+   "p": 8,
+   "gb": "-",
+   "racha": "L2",
    "me": false
   },
   {
@@ -76,11 +60,11 @@
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 14,
+   "jj": 15,
    "g": 5,
-   "p": 9,
-   "gb": "1.5",
-   "racha": "L3",
+   "p": 10,
+   "gb": "2.0",
+   "racha": "L4",
    "me": false
   },
   {
