@@ -1,7 +1,14 @@
 {
- "ts": 1793905382863,
- "checked": "2026-11-05T19:03:02Z",
- "game": null,
+ "ts": 1793924403186,
+ "checked": "2026-11-06T00:20:03Z",
+ "game": {
+  "gamePk": 851504,
+  "status": "Scheduled",
+  "abstract": "Preview",
+  "away": "Leones del Escogido",
+  "home": "Gigantes del Cibao",
+  "startTime": "2026-11-06T23:00:00Z"
+ },
  "live": false,
  "source": null,
  "alternates": [],
