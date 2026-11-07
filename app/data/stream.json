@@ -1,13 +1,13 @@
 {
- "ts": 1793998631612,
- "checked": "2026-11-06T20:57:11Z",
+ "ts": 1794012634241,
+ "checked": "2026-11-07T00:50:34Z",
  "game": {
-  "gamePk": 851504,
+  "gamePk": 851543,
   "status": "Scheduled",
   "abstract": "Preview",
   "away": "Leones del Escogido",
-  "home": "Gigantes del Cibao",
-  "startTime": "2026-11-06T23:00:00Z"
+  "home": "Estrellas Orientales",
+  "startTime": "2026-11-07T23:30:00Z"
  },
  "live": false,
  "source": null,
@@ -17,9 +17,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.2285,
-    "candela": 0.0142,
-    "derrota": 0.7573
+    "victoria": 0.189,
+    "candela": 0.1156,
+    "derrota": 0.6954
    }
   }
  },
