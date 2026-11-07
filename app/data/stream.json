@@ -1,23 +1,16 @@
 {
- "ts": 1794076617541,
- "checked": "2026-11-07T18:36:57Z",
+ "ts": 1794090063477,
+ "checked": "2026-11-07T22:21:03Z",
  "game": {
   "gamePk": 851543,
-  "status": "Scheduled",
+  "status": "Pre-Game",
   "abstract": "Preview",
   "away": "Leones del Escogido",
   "home": "Estrellas Orientales",
   "startTime": "2026-11-07T23:30:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "7WkCqszx4uM",
-  "isLive": true,
-  "title": "Jassel Pérez en la ACB: Jornada #7: FIATC Girona - Surne Bilbao - Liga Endesa 2027",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
   "modo": "pre",
