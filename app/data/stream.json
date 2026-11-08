@@ -1,13 +1,13 @@
 {
- "ts": 1794090063477,
- "checked": "2026-11-07T22:21:03Z",
+ "ts": 1794102336089,
+ "checked": "2026-11-08T01:45:36Z",
  "game": {
-  "gamePk": 851543,
-  "status": "Pre-Game",
+  "gamePk": 851475,
+  "status": "Scheduled",
   "abstract": "Preview",
-  "away": "Leones del Escogido",
-  "home": "Estrellas Orientales",
-  "startTime": "2026-11-07T23:30:00Z"
+  "away": "Tigres del Licey",
+  "home": "Leones del Escogido",
+  "startTime": "2026-11-08T21:00:00Z"
  },
  "live": false,
  "source": null,
@@ -17,9 +17,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0235,
-    "candela": 0.051,
-    "derrota": 0.9255
+    "victoria": 0.0484,
+    "candela": 0.1882,
+    "derrota": 0.7635
    }
   }
  },
@@ -37,21 +37,21 @@
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 16,
-   "g": 10,
+   "jj": 17,
+   "g": 11,
    "p": 6,
-   "gb": "-2.5",
-   "racha": "L1",
+   "gb": "-3.0",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 16,
+   "jj": 17,
    "g": 8,
-   "p": 8,
-   "gb": "-0.5",
-   "racha": "W1",
+   "p": 9,
+   "gb": "-",
+   "racha": "L1",
    "me": false
   },
   {
