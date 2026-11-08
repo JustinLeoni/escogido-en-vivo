@@ -1,27 +1,36 @@
 {
- "ts": 1794167693986,
- "checked": "2026-11-08T19:54:53Z",
+ "ts": 1794180799134,
+ "checked": "2026-11-08T23:33:19Z",
  "game": {
   "gamePk": 851475,
-  "status": "Scheduled",
-  "abstract": "Preview",
+  "status": "In Progress",
+  "abstract": "Live",
   "away": "Tigres del Licey",
   "home": "Leones del Escogido",
   "startTime": "2026-11-08T21:00:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "BxlK_I_kHi8",
+  "isLive": true,
+  "title": "TIGRES DEL LICEY VS LEONES DEL ESCOGIDO - 8 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
-  "modo": "pre",
+  "momento": 65,
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.202,
-    "candela": 0.165,
-    "derrota": 0.633
-   }
-  }
+    "victoria": 0.2858,
+    "candela": 0.0211,
+    "derrota": 0.693
+   },
+   "confidence": 0.3687
+  },
+  "modo": "live"
  },
  "posiciones": [
   {
