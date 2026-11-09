@@ -1,95 +1,86 @@
 {
- "ts": 1794180799134,
- "checked": "2026-11-08T23:33:19Z",
+ "ts": 1794193280947,
+ "checked": "2026-11-09T03:01:20Z",
  "game": {
-  "gamePk": 851475,
-  "status": "In Progress",
-  "abstract": "Live",
-  "away": "Tigres del Licey",
-  "home": "Leones del Escogido",
-  "startTime": "2026-11-08T21:00:00Z"
+  "gamePk": 851433,
+  "status": "Scheduled",
+  "abstract": "Preview",
+  "away": "Leones del Escogido",
+  "home": "Toros del Este",
+  "startTime": "2026-11-09T21:00:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "BxlK_I_kHi8",
-  "isLive": true,
-  "title": "TIGRES DEL LICEY VS LEONES DEL ESCOGIDO - 8 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
-  "momento": 65,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.2858,
-    "candela": 0.0211,
-    "derrota": 0.693
-   },
-   "confidence": 0.3687
-  },
-  "modo": "live"
+    "victoria": 0.0106,
+    "candela": 0.0276,
+    "derrota": 0.9618
+   }
+  }
  },
  "posiciones": [
   {
-   "id": 671,
-   "nombre": "Leones",
-   "jj": 17,
-   "g": 12,
-   "p": 5,
-   "gb": "-4.5",
-   "racha": "W1",
-   "me": true
-  },
-  {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 17,
-   "g": 11,
+   "jj": 18,
+   "g": 12,
    "p": 6,
-   "gb": "-3.5",
-   "racha": "W1",
+   "gb": "-4.5",
+   "racha": "W2",
    "me": false
+  },
+  {
+   "id": 671,
+   "nombre": "Leones",
+   "jj": 18,
+   "g": 12,
+   "p": 6,
+   "gb": "-4.5",
+   "racha": "L1",
+   "me": true
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 17,
-   "g": 8,
+   "jj": 18,
+   "g": 9,
    "p": 9,
-   "gb": "-0.5",
-   "racha": "L1",
+   "gb": "-1.5",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 16,
+   "jj": 17,
    "g": 7,
-   "p": 9,
-   "gb": "-",
-   "racha": "L2",
-   "me": false
-  },
-  {
-   "id": 667,
-   "nombre": "Aguilas",
-   "jj": 16,
-   "g": 6,
    "p": 10,
-   "gb": "1.0",
-   "racha": "W2",
+   "gb": "-",
+   "racha": "L3",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
+   "jj": 18,
+   "g": 7,
+   "p": 11,
+   "gb": "0.5",
+   "racha": "W1",
+   "me": false
+  },
+  {
+   "id": 667,
+   "nombre": "Aguilas",
    "jj": 17,
    "g": 6,
    "p": 11,
-   "gb": "1.5",
+   "gb": "1.0",
    "racha": "L1",
    "me": false
   }
