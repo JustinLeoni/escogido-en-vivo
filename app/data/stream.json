@@ -1,89 +1,87 @@
 {
- "ts": 1794260228587,
- "checked": "2026-11-09T21:37:08Z",
+ "ts": 1794282662286,
+ "checked": "2026-11-10T03:51:02Z",
  "game": {
-  "gamePk": 851433,
-  "status": "In Progress",
-  "abstract": "Live",
+  "gamePk": 851527,
+  "status": "Scheduled",
+  "abstract": "Preview",
   "away": "Leones del Escogido",
-  "home": "Toros del Este",
-  "startTime": "2026-11-09T21:00:00Z"
+  "home": "Estrellas Orientales",
+  "startTime": "2026-11-10T23:30:00Z"
  },
  "live": false,
  "source": null,
  "alternates": [],
  "laya": {
-  "momento": 52,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0523,
-    "candela": 0.0178,
-    "derrota": 0.9298
-   },
-   "confidence": 0.7326
-  },
-  "modo": "live"
+    "victoria": 0.1638,
+    "candela": 0.1091,
+    "derrota": 0.7271
+   }
+  }
  },
  "posiciones": [
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 18,
-   "g": 12,
+   "jj": 19,
+   "g": 13,
    "p": 6,
    "gb": "-4.5",
-   "racha": "W2",
+   "racha": "W3",
    "me": false
   },
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 18,
-   "g": 12,
+   "jj": 19,
+   "g": 13,
    "p": 6,
    "gb": "-4.5",
-   "racha": "L1",
+   "racha": "W1",
    "me": true
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 18,
+   "jj": 19,
    "g": 9,
-   "p": 9,
-   "gb": "-1.5",
-   "racha": "W1",
+   "p": 10,
+   "gb": "-0.5",
+   "racha": "L1",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 17,
-   "g": 7,
+   "jj": 18,
+   "g": 8,
    "p": 10,
    "gb": "-",
-   "racha": "L3",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 18,
+   "jj": 19,
    "g": 7,
-   "p": 11,
-   "gb": "0.5",
-   "racha": "W1",
+   "p": 12,
+   "gb": "1.5",
+   "racha": "L1",
    "me": false
   },
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 17,
+   "jj": 18,
    "g": 6,
-   "p": 11,
-   "gb": "1.0",
-   "racha": "L1",
+   "p": 12,
+   "gb": "2.0",
+   "racha": "L2",
    "me": false
   }
  ]
