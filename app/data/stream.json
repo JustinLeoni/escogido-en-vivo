@@ -1,6 +1,6 @@
 {
- "ts": 1794529826608,
- "checked": "2026-11-13T00:30:26Z",
+ "ts": 1794553892116,
+ "checked": "2026-11-13T07:11:32Z",
  "game": {
   "gamePk": 851462,
   "status": "Scheduled",
@@ -65,23 +65,23 @@
    "me": false
   },
   {
-   "id": 668,
-   "nombre": "Toros",
+   "id": 667,
+   "nombre": "Aguilas",
    "jj": 20,
    "g": 8,
    "p": 12,
    "gb": "1.0",
-   "racha": "W1",
+   "racha": "W2",
    "me": false
   },
   {
-   "id": 667,
-   "nombre": "Aguilas",
-   "jj": 19,
-   "g": 7,
-   "p": 12,
+   "id": 668,
+   "nombre": "Toros",
+   "jj": 21,
+   "g": 8,
+   "p": 13,
    "gb": "1.5",
-   "racha": "W1",
+   "racha": "L1",
    "me": false
   }
  ]
