@@ -1,27 +1,36 @@
 {
- "ts": 1794670944699,
- "checked": "2026-11-14T15:42:24Z",
+ "ts": 1794686954181,
+ "checked": "2026-11-14T20:09:14Z",
  "game": {
   "gamePk": 851473,
-  "status": "Scheduled",
-  "abstract": "Preview",
+  "status": "In Progress",
+  "abstract": "Live",
   "away": "Estrellas Orientales",
   "home": "Leones del Escogido",
   "startTime": "2026-11-14T20:00:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "wLOPMUJ7qUY",
+  "isLive": true,
+  "title": "ESTRELLAS ORIENTALES VS LEONES DEL ESCOGIDO - 14 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
-  "modo": "pre",
+  "momento": 56,
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.3056,
-    "candela": 0.1713,
-    "derrota": 0.5231
-   }
-  }
+    "victoria": 0.4363,
+    "candela": 0.0538,
+    "derrota": 0.5099
+   },
+   "confidence": 0.2149
+  },
+  "modo": "live"
  },
  "posiciones": [
   {
