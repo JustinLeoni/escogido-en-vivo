@@ -1,46 +1,37 @@
 {
- "ts": 1794686954181,
- "checked": "2026-11-14T20:09:14Z",
+ "ts": 1794700691501,
+ "checked": "2026-11-14T23:58:11Z",
  "game": {
   "gamePk": 851473,
-  "status": "In Progress",
-  "abstract": "Live",
+  "status": "Final",
+  "abstract": "Final",
   "away": "Estrellas Orientales",
   "home": "Leones del Escogido",
   "startTime": "2026-11-14T20:00:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "wLOPMUJ7qUY",
-  "isLive": true,
-  "title": "ESTRELLAS ORIENTALES VS LEONES DEL ESCOGIDO - 14 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
-  "momento": 56,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.4363,
-    "candela": 0.0538,
-    "derrota": 0.5099
-   },
-   "confidence": 0.2149
-  },
-  "modo": "live"
+    "victoria": 0.008,
+    "candela": 0.0134,
+    "derrota": 0.9786
+   }
+  }
  },
  "posiciones": [
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 22,
+   "jj": 23,
    "g": 15,
-   "p": 7,
-   "gb": "-5.5",
-   "racha": "W1",
+   "p": 8,
+   "gb": "-4.5",
+   "racha": "L1",
    "me": true
   },
   {
@@ -49,7 +40,7 @@
    "jj": 22,
    "g": 13,
    "p": 9,
-   "gb": "-3.5",
+   "gb": "-3.0",
    "racha": "L3",
    "me": false
   },
@@ -59,18 +50,18 @@
    "jj": 22,
    "g": 11,
    "p": 11,
-   "gb": "-1.5",
+   "gb": "-1.0",
    "racha": "W1",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 21,
-   "g": 9,
+   "jj": 22,
+   "g": 10,
    "p": 12,
    "gb": "-",
-   "racha": "L1",
+   "racha": "W1",
    "me": false
   },
   {
@@ -79,7 +70,7 @@
    "jj": 22,
    "g": 9,
    "p": 13,
-   "gb": "0.5",
+   "gb": "1.0",
    "racha": "W1",
    "me": false
   },
@@ -89,7 +80,7 @@
    "jj": 21,
    "g": 8,
    "p": 13,
-   "gb": "1.0",
+   "gb": "1.5",
    "racha": "L1",
    "me": false
   }
