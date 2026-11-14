@@ -1,13 +1,13 @@
 {
- "ts": 1794605606779,
- "checked": "2026-11-13T21:33:26Z",
+ "ts": 1794621121042,
+ "checked": "2026-11-14T01:52:01Z",
  "game": {
-  "gamePk": 851462,
+  "gamePk": 851473,
   "status": "Scheduled",
   "abstract": "Preview",
-  "away": "Leones del Escogido",
-  "home": "Tigres del Licey",
-  "startTime": "2026-11-13T23:30:00Z"
+  "away": "Estrellas Orientales",
+  "home": "Leones del Escogido",
+  "startTime": "2026-11-14T20:00:00Z"
  },
  "live": false,
  "source": null,
@@ -17,9 +17,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0122,
-    "candela": 0.02,
-    "derrota": 0.9678
+    "victoria": 0.0524,
+    "candela": 0.1717,
+    "derrota": 0.776
    }
   }
  },
