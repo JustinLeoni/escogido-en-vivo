@@ -1,34 +1,29 @@
 {
- "ts": 1794771790674,
- "checked": "2026-11-15T19:43:10Z",
+ "ts": 1794785667380,
+ "checked": "2026-11-15T23:34:27Z",
  "game": {
   "gamePk": 851461,
-  "status": "Pre-Game",
-  "abstract": "Preview",
+  "status": "In Progress",
+  "abstract": "Live",
   "away": "Leones del Escogido",
   "home": "Tigres del Licey",
   "startTime": "2026-11-15T21:00:00Z"
  },
- "live": true,
- "source": {
-  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
-  "channelName": "La Cueva Roja · Abriendo Sports",
-  "videoId": "B2sarA5HlOk",
-  "isLive": true,
-  "title": "Jornada #8: Baskonia Kosner vs Real Madrid - Liga Endesa 2027",
-  "author": "Abriendo Sports"
- },
+ "live": false,
+ "source": null,
  "alternates": [],
  "laya": {
-  "modo": "pre",
+  "momento": 66,
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0055,
-    "candela": 0.0185,
-    "derrota": 0.976
-   }
-  }
+    "victoria": 0.0358,
+    "candela": 0.0059,
+    "derrota": 0.9583
+   },
+   "confidence": 0.8268
+  },
+  "modo": "live"
  },
  "posiciones": [
   {
