@@ -1,13 +1,13 @@
 {
- "ts": 1794700691501,
- "checked": "2026-11-14T23:58:11Z",
+ "ts": 1794723068397,
+ "checked": "2026-11-15T06:11:08Z",
  "game": {
-  "gamePk": 851473,
-  "status": "Final",
-  "abstract": "Final",
-  "away": "Estrellas Orientales",
-  "home": "Leones del Escogido",
-  "startTime": "2026-11-14T20:00:00Z"
+  "gamePk": 851461,
+  "status": "Scheduled",
+  "abstract": "Preview",
+  "away": "Leones del Escogido",
+  "home": "Tigres del Licey",
+  "startTime": "2026-11-15T21:00:00Z"
  },
  "live": false,
  "source": null,
@@ -17,9 +17,9 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.008,
-    "candela": 0.0134,
-    "derrota": 0.9786
+    "victoria": 0.0055,
+    "candela": 0.0185,
+    "derrota": 0.976
    }
   }
  },
@@ -37,21 +37,21 @@
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 22,
-   "g": 13,
+   "jj": 23,
+   "g": 14,
    "p": 9,
-   "gb": "-3.0",
-   "racha": "L3",
+   "gb": "-3.5",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 22,
+   "jj": 23,
    "g": 11,
-   "p": 11,
-   "gb": "-1.0",
-   "racha": "W1",
+   "p": 12,
+   "gb": "-0.5",
+   "racha": "L1",
    "me": false
   },
   {
@@ -65,8 +65,8 @@
    "me": false
   },
   {
-   "id": 668,
-   "nombre": "Toros",
+   "id": 667,
+   "nombre": "Aguilas",
    "jj": 22,
    "g": 9,
    "p": 13,
@@ -75,11 +75,11 @@
    "me": false
   },
   {
-   "id": 667,
-   "nombre": "Aguilas",
-   "jj": 21,
-   "g": 8,
-   "p": 13,
+   "id": 668,
+   "nombre": "Toros",
+   "jj": 23,
+   "g": 9,
+   "p": 14,
    "gb": "1.5",
    "racha": "L1",
    "me": false
