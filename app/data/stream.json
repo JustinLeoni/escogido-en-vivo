@@ -1,49 +1,50 @@
 {
- "ts": 1794785667380,
- "checked": "2026-11-15T23:34:27Z",
- "game": {
-  "gamePk": 851461,
-  "status": "In Progress",
-  "abstract": "Live",
-  "away": "Leones del Escogido",
-  "home": "Tigres del Licey",
-  "startTime": "2026-11-15T21:00:00Z"
- },
+ "ts": 1794798815401,
+ "checked": "2026-11-16T03:13:35Z",
+ "game": null,
  "live": false,
  "source": null,
  "alternates": [],
  "laya": {
-  "momento": 66,
+  "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0358,
-    "candela": 0.0059,
-    "derrota": 0.9583
-   },
-   "confidence": 0.8268
-  },
-  "modo": "live"
+    "victoria": 0.251,
+    "candela": 0.1572,
+    "derrota": 0.5919
+   }
+  }
  },
  "posiciones": [
   {
    "id": 671,
    "nombre": "Leones",
-   "jj": 23,
-   "g": 15,
+   "jj": 24,
+   "g": 16,
    "p": 8,
    "gb": "-4.5",
-   "racha": "L1",
+   "racha": "W1",
    "me": true
   },
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 23,
+   "jj": 24,
    "g": 14,
-   "p": 9,
-   "gb": "-3.5",
-   "racha": "W1",
+   "p": 10,
+   "gb": "-2.5",
+   "racha": "L1",
+   "me": false
+  },
+  {
+   "id": 669,
+   "nombre": "Estrellas",
+   "jj": 23,
+   "g": 11,
+   "p": 12,
+   "gb": "-",
+   "racha": "W2",
    "me": false
   },
   {
@@ -52,18 +53,8 @@
    "jj": 23,
    "g": 11,
    "p": 12,
-   "gb": "-0.5",
-   "racha": "L1",
-   "me": false
-  },
-  {
-   "id": 669,
-   "nombre": "Estrellas",
-   "jj": 22,
-   "g": 10,
-   "p": 12,
    "gb": "-",
-   "racha": "W1",
+   "racha": "L1",
    "me": false
   },
   {
@@ -72,18 +63,18 @@
    "jj": 22,
    "g": 9,
    "p": 13,
-   "gb": "1.0",
+   "gb": "1.5",
    "racha": "W1",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 23,
+   "jj": 24,
    "g": 9,
-   "p": 14,
-   "gb": "1.5",
-   "racha": "L1",
+   "p": 15,
+   "gb": "2.5",
+   "racha": "L2",
    "me": false
   }
  ]
