@@ -1,7 +1,14 @@
 {
- "ts": 1794863802179,
- "checked": "2026-11-16T21:16:42Z",
- "game": null,
+ "ts": 1794888083676,
+ "checked": "2026-11-17T04:01:23Z",
+ "game": {
+  "gamePk": 851484,
+  "status": "Scheduled",
+  "abstract": "Preview",
+  "away": "Toros del Este",
+  "home": "Leones del Escogido",
+  "startTime": "2026-11-17T23:15:00Z"
+ },
  "live": false,
  "source": null,
  "alternates": [],
@@ -40,10 +47,10 @@
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 23,
-   "g": 11,
+   "jj": 24,
+   "g": 12,
    "p": 12,
-   "gb": "-",
+   "gb": "-0.5",
    "racha": "W2",
    "me": false
   },
@@ -60,10 +67,10 @@
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 22,
+   "jj": 23,
    "g": 9,
-   "p": 13,
-   "gb": "1.5",
+   "p": 14,
+   "gb": "2.0",
    "racha": "W1",
    "me": false
   },
