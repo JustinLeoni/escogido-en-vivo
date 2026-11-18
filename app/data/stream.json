@@ -1,25 +1,32 @@
 {
- "ts": 1794952152256,
- "checked": "2026-11-17T21:49:12Z",
+ "ts": 1794972679429,
+ "checked": "2026-11-18T03:31:19Z",
  "game": {
-  "gamePk": 851484,
+  "gamePk": 851422,
   "status": "Scheduled",
   "abstract": "Preview",
-  "away": "Toros del Este",
-  "home": "Leones del Escogido",
-  "startTime": "2026-11-17T23:15:00Z"
+  "away": "Leones del Escogido",
+  "home": "Toros del Este",
+  "startTime": "2026-11-18T23:30:00Z"
  },
- "live": false,
- "source": null,
+ "live": true,
+ "source": {
+  "channelId": "UCF8EeDFLnGcD5-SRFS4Eyiw",
+  "channelName": "La Cueva Roja · Abriendo Sports",
+  "videoId": "zXv2-KgMxcI",
+  "isLive": true,
+  "title": "TOROS DEL ESTE VS LEONES DEL ESCOGIDO - 17 NOVIEMBRE -TEMPORADA 2026-2027 / LA CUEVA ROJA",
+  "author": "Abriendo Sports"
+ },
  "alternates": [],
  "laya": {
   "modo": "pre",
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.251,
-    "candela": 0.1572,
-    "derrota": 0.5919
+    "victoria": 0.1134,
+    "candela": 0.0724,
+    "derrota": 0.8142
    }
   }
  },
@@ -30,48 +37,48 @@
    "jj": 24,
    "g": 16,
    "p": 8,
-   "gb": "-4.5",
+   "gb": "-4.0",
    "racha": "W1",
    "me": true
   },
   {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 24,
+   "jj": 25,
    "g": 14,
-   "p": 10,
-   "gb": "-2.5",
-   "racha": "L1",
+   "p": 11,
+   "gb": "-1.5",
+   "racha": "L2",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 24,
-   "g": 12,
+   "jj": 25,
+   "g": 13,
    "p": 12,
    "gb": "-0.5",
-   "racha": "W2",
+   "racha": "W3",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 23,
-   "g": 11,
+   "jj": 24,
+   "g": 12,
    "p": 12,
    "gb": "-",
-   "racha": "L1",
+   "racha": "W1",
    "me": false
   },
   {
    "id": 667,
    "nombre": "Aguilas",
-   "jj": 23,
+   "jj": 24,
    "g": 9,
-   "p": 14,
-   "gb": "2.0",
-   "racha": "W1",
+   "p": 15,
+   "gb": "3.0",
+   "racha": "L1",
    "me": false
   },
   {
@@ -80,7 +87,7 @@
    "jj": 24,
    "g": 9,
    "p": 15,
-   "gb": "2.5",
+   "gb": "3.0",
    "racha": "L2",
    "me": false
   }
