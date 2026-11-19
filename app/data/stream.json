@@ -1,14 +1,7 @@
 {
- "ts": 1795034288788,
- "checked": "2026-11-18T20:38:08Z",
- "game": {
-  "gamePk": 851422,
-  "status": "Scheduled",
-  "abstract": "Preview",
-  "away": "Leones del Escogido",
-  "home": "Toros del Este",
-  "startTime": "2026-11-18T23:30:00Z"
- },
+ "ts": 1795053807547,
+ "checked": "2026-11-19T02:03:27Z",
+ "game": null,
  "live": false,
  "source": null,
  "alternates": [],
@@ -17,9 +10,9 @@
   "proyeccion": {
    "choice": "victoria",
    "probabilities": {
-    "victoria": 0.6504,
-    "candela": 0.0793,
-    "derrota": 0.2704
+    "victoria": 0.4456,
+    "candela": 0.1924,
+    "derrota": 0.362
    }
   }
  },
@@ -30,7 +23,7 @@
    "jj": 25,
    "g": 17,
    "p": 8,
-   "gb": "-4.5",
+   "gb": "-5.0",
    "racha": "W2",
    "me": true
   },
@@ -40,28 +33,28 @@
    "jj": 25,
    "g": 14,
    "p": 11,
-   "gb": "-1.5",
+   "gb": "-2.0",
    "racha": "L2",
    "me": false
   },
   {
    "id": 669,
    "nombre": "Estrellas",
-   "jj": 25,
-   "g": 13,
+   "jj": 26,
+   "g": 14,
    "p": 12,
-   "gb": "-0.5",
-   "racha": "W3",
+   "gb": "-1.5",
+   "racha": "W4",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 24,
+   "jj": 25,
    "g": 12,
-   "p": 12,
+   "p": 13,
    "gb": "-",
-   "racha": "W1",
+   "racha": "L1",
    "me": false
   },
   {
@@ -70,7 +63,7 @@
    "jj": 24,
    "g": 9,
    "p": 15,
-   "gb": "3.0",
+   "gb": "2.5",
    "racha": "L1",
    "me": false
   },
@@ -80,7 +73,7 @@
    "jj": 25,
    "g": 9,
    "p": 16,
-   "gb": "3.5",
+   "gb": "3.0",
    "racha": "L3",
    "me": false
   }
