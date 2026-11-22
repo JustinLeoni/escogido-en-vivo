@@ -1,13 +1,13 @@
 {
- "ts": 1795294391260,
- "checked": "2026-11-21T20:53:11Z",
+ "ts": 1795309652393,
+ "checked": "2026-11-22T01:07:32Z",
  "game": {
-  "gamePk": 851502,
-  "status": "Pre-Game",
+  "gamePk": 851451,
+  "status": "Scheduled",
   "abstract": "Preview",
   "away": "Leones del Escogido",
-  "home": "Gigantes del Cibao",
-  "startTime": "2026-11-21T21:00:00Z"
+  "home": "Tigres del Licey",
+  "startTime": "2026-11-22T21:00:00Z"
  },
  "live": false,
  "source": null,
@@ -17,32 +17,32 @@
   "proyeccion": {
    "choice": "derrota",
    "probabilities": {
-    "victoria": 0.0143,
-    "candela": 0.0264,
-    "derrota": 0.9594
+    "victoria": 0.0145,
+    "candela": 0.0251,
+    "derrota": 0.9604
    }
   }
  },
  "posiciones": [
   {
-   "id": 671,
-   "nombre": "Leones",
-   "jj": 27,
-   "g": 17,
-   "p": 10,
-   "gb": "-3.5",
-   "racha": "L2",
-   "me": true
-  },
-  {
    "id": 672,
    "nombre": "Tigres",
-   "jj": 27,
-   "g": 16,
+   "jj": 28,
+   "g": 17,
    "p": 11,
    "gb": "-2.5",
-   "racha": "W2",
+   "racha": "W3",
    "me": false
+  },
+  {
+   "id": 671,
+   "nombre": "Leones",
+   "jj": 28,
+   "g": 17,
+   "p": 11,
+   "gb": "-2.5",
+   "racha": "L3",
+   "me": true
   },
   {
    "id": 669,
@@ -50,28 +50,28 @@
    "jj": 27,
    "g": 15,
    "p": 12,
-   "gb": "-1.5",
+   "gb": "-1.0",
    "racha": "W5",
    "me": false
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 26,
-   "g": 13,
+   "jj": 27,
+   "g": 14,
    "p": 13,
    "gb": "-",
-   "racha": "W1",
+   "racha": "W2",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 27,
+   "jj": 28,
    "g": 10,
-   "p": 17,
-   "gb": "3.5",
-   "racha": "L1",
+   "p": 18,
+   "gb": "4.5",
+   "racha": "L2",
    "me": false
   },
   {
@@ -80,7 +80,7 @@
    "jj": 26,
    "g": 9,
    "p": 17,
-   "gb": "4.0",
+   "gb": "4.5",
    "racha": "L3",
    "me": false
   }
