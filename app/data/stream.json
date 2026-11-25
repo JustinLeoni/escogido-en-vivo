@@ -1,6 +1,6 @@
 {
- "ts": 1795574134209,
- "checked": "2026-11-25T02:35:34Z",
+ "ts": 1795607255681,
+ "checked": "2026-11-25T11:47:35Z",
  "game": {
   "gamePk": 851482,
   "status": "Scheduled",
@@ -25,23 +25,23 @@
  },
  "posiciones": [
   {
-   "id": 672,
-   "nombre": "Tigres",
-   "jj": 29,
+   "id": 669,
+   "nombre": "Estrellas",
+   "jj": 30,
    "g": 18,
-   "p": 11,
+   "p": 12,
    "gb": "-3.0",
-   "racha": "W4",
+   "racha": "W8",
    "me": false
   },
   {
-   "id": 669,
-   "nombre": "Estrellas",
-   "jj": 29,
-   "g": 17,
+   "id": 672,
+   "nombre": "Tigres",
+   "jj": 30,
+   "g": 18,
    "p": 12,
-   "gb": "-2.0",
-   "racha": "W7",
+   "gb": "-3.0",
+   "racha": "L1",
    "me": false
   },
   {
@@ -50,18 +50,18 @@
    "jj": 30,
    "g": 17,
    "p": 13,
-   "gb": "-1.5",
+   "gb": "-2.0",
    "racha": "L5",
    "me": true
   },
   {
    "id": 670,
    "nombre": "Gigantes",
-   "jj": 29,
+   "jj": 30,
    "g": 15,
-   "p": 14,
+   "p": 15,
    "gb": "-",
-   "racha": "L1",
+   "racha": "L2",
    "me": false
   },
   {
@@ -70,18 +70,18 @@
    "jj": 30,
    "g": 11,
    "p": 19,
-   "gb": "4.5",
+   "gb": "4.0",
    "racha": "W2",
    "me": false
   },
   {
    "id": 668,
    "nombre": "Toros",
-   "jj": 29,
-   "g": 10,
+   "jj": 30,
+   "g": 11,
    "p": 19,
-   "gb": "5.0",
-   "racha": "L3",
+   "gb": "4.0",
+   "racha": "W1",
    "me": false
   }
  ]
