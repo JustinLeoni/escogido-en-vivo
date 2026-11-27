@@ -1,7 +1,14 @@
 {
- "ts": 1795732080533,
- "checked": "2026-11-26T22:28:00Z",
- "game": null,
+ "ts": 1795753844100,
+ "checked": "2026-11-27T04:30:44Z",
+ "game": {
+  "gamePk": 851551,
+  "status": "Scheduled",
+  "abstract": "Preview",
+  "away": "Leones del Escogido",
+  "home": "Aguilas Cibaenas",
+  "startTime": "2026-11-27T23:30:00Z"
+ },
  "live": false,
  "source": null,
  "alternates": [],
